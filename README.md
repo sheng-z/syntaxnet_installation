@@ -1,16 +1,22 @@
 ### Environment
-System: Ubuntu 16.04 64bit
-bazel: 0.3.1
-swig: 3.0.10/3.0.8
-Python: 2.7.12
+System: Ubuntu 16.04 64bit 
+
+bazel: 0.3.1 
+
+swig: 3.0.10/3.0.8 
+
+Python: 2.7.12 
+
 Anaconda: 4.2.0
 
-Cuda: 7.5
-Cudnn: 5.1.3
-GPU: Titan X
+Cuda: 7.5 
+
+Cudnn: 5.1.3 
+
+GPU: Titan X 
 
 ### Syntaxnet SHA1
-`c5bb05430dcc6a2c377ffed35b00a18b402fcbc3`
+Installation has been tested on `c5bb05430dcc6a2c377ffed35b00a18b402fcbc3`
 
 ### Installation
 1. [Anaconda](https://www.continuum.io/downloads)
