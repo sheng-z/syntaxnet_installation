@@ -28,7 +28,7 @@ Installation has been tested on `c5bb05430dcc6a2c377ffed35b00a18b402fcbc3`
     - numpy: `pip install numpy`
     - mock: `pip install mock`
 3. `git clone --recursive https://github.com/tensorflow/models.git`
-4. `cd models/syntaxnet/tensorflow`
+4. `cd models/syntaxnet`
 5. Modifications for GPU support ([issues/248](https://github.com/tensorflow/models/issues/248))
     - Make sure you have the following environment variables set: `CUDA_HOME="[path_to_cuda_top_directory]" LD_LIBRARY_PATH="[path_to_cuda_lib64_directory] :$LD_LIBRARY_PATH" PATH="[path_to_cuda_bin_directory]:$PATH"`
     - Add the line `build --config=cuda` to `tools/bazel.rc`
@@ -40,10 +40,14 @@ Installation has been tested on `c5bb05430dcc6a2c377ffed35b00a18b402fcbc3`
     - Add the line `cxx_builtin_include_directory: "[your Anaconda/include]"`, and `cxx_builtin_include_directory: "[your Anaconda/include/python2.7]"` to `tensorflow/third_party/gpus/crosstool/CROSSTOOL` (with the cuda part pointing to your Cuda installation)
     - add the line `use_default_shell_env=True,` to `tensorflow.bzl` (e.g., for v0.10, add the line to [here](https://github.com/tensorflow/tensorflow/blob/r0.10/tensorflow/tensorflow.bzl#L483))
 
-7. `./configure`
+7. `cd tensorflow`
 
-8. Build Syntaxnet:
+8. `./configure`
+
+9. `cd ..`
+
+10. Build Syntaxnet:
 `bazel test -c opt --config=cuda --define using_cuda_nvcc=true --define using_gcudacc=true syntaxnet/... util/utf8/... --genrule_strategy=standalone --spawn_strategy=standalone`
 
-9. If you met errors, please clean before rebuilding:
+11. If you met errors, please clean before rebuilding:
 `bazel clean --expunge_async`
